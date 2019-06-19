@@ -33,19 +33,19 @@
             const options = await ui.dialog.options();
             const bynderContainer = document.getElementById('bynder-config');
             console.log("dialogoptions", options);
-            const value = JSON.parse(options.value);
+            options.value = JSON.parse(options.value);
             
             bynderContainer.innerHTML = `<div id="bynder-compactview"
               data-language="en_US"
               data-button="Open Compact View"
               data-zindex="300"
               data-collections="true"
-              data-header="${value.dataHeader || 'false'}"
+              data-header="${options.value.dataHeader || 'false'}"
               data-autoload="true"
               data-fullScreen="true"
-              data-mode="${value.dataMode || 'single'}"
-              data-assetTypes="${value.dataAssetTypes || 'video'}"
-              data-defaultEnvironment="${value.dataDefaultEnvironment}"
+              data-mode="${options.value.dataMode || 'single'}"
+              data-assetTypes="${options.value.dataAssetTypes || 'video'}"
+              data-defaultEnvironment="${options.value.dataDefaultEnvironment}"
             ></div>`;
 
             //Add bynder load script after registering to avoid race condition between scripts
