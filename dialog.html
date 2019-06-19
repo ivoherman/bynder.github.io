@@ -30,7 +30,7 @@
         document.addEventListener('DOMContentLoaded', async () => {
           try {
             ui = await UiExtension.register();
-            const options = await JSON.parse(ui.dialog.options);
+            const options = await ui.dialog.options();
             const bynderContainer = document.getElementById('bynder-config');
             console.log("dialogoptions", options);
             
