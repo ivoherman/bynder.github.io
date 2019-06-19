@@ -103,8 +103,6 @@
           }
 
           const config = JSON.parse(ui.extension.config);
-          console.log(config.value.dataAssetTypes);
-          console.log(ui.extension);
           
           const options = {
             title: 'Bynder',
@@ -112,6 +110,8 @@
             size: 'large',
             value: config,
           };
+          
+          console.log(options.value.dataAssetTypes);
 
           buttonElement.style.display = 'block';
           buttonElement.addEventListener('click', () => showDialog(options));
