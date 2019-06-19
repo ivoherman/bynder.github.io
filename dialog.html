@@ -32,7 +32,7 @@
             ui = await UiExtension.register();
             const options = await ui.dialog.options();
             const bynderContainer = document.getElementById('bynder-config');
-            console.log(options.value.dataAssetTypes);
+            console.log(options);
             
             bynderContainer.innerHTML = `<div id="bynder-compactview"
               data-language="en_US"
@@ -44,7 +44,7 @@
               data-fullScreen="true"
               data-mode="${options.value.dataMode || 'single'}"
               data-assetTypes="${options.value.dataAssetTypes || 'video'}"
-              data-defaultEnvironment="${options.config.dataDefaultEnvironment}"
+              data-defaultEnvironment="${options.value.dataDefaultEnvironment}"
             ></div>`;
 
             //Add bynder load script after registering to avoid race condition between scripts
