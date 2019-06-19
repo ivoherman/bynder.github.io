@@ -103,15 +103,15 @@
           }
 
           const config = JSON.parse(ui.extension.config);
-          
+          console.log("config", config);
+
           const options = {
             title: 'Bynder',
             url: './dialog.html',
             size: 'large',
             value: config,
           };
-          console.log(config);
-          console.log(options.value);
+          console.log("options", options);
 
           buttonElement.style.display = 'block';
           buttonElement.addEventListener('click', () => showDialog(options));
