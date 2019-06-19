@@ -102,7 +102,7 @@
             return;
           }
 
-          const config = JSON.parse(ui.extension.config);
+          const config = ui.extension.config;
           console.log("config", config);
 
           const options = {
@@ -126,7 +126,7 @@
             if (error.code === 'DialogCanceled') {
               return;
             }
-
+            
             console.error('Error after open dialog: ', error.code, error.message);
           }
         }
