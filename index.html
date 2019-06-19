@@ -103,6 +103,9 @@
           }
 
           const config = JSON.parse(ui.extension.config);
+          console.log(config);
+          console.log(ui.extension);
+          
           const options = {
             title: 'Bynder',
             url: './dialog.html',
@@ -158,7 +161,7 @@
         function makeThumbnail(action, container, asset) {
           const img = document.createElement('img');
           img.className = 'image';
-
+          
           switch (asset.type) {
             case 'image':
             case 'video':
